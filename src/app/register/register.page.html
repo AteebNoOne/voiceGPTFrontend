@@ -1,5 +1,7 @@
 <ion-content id="my-body" [fullscreen]="true">
-
+  <div *ngIf="loading" class="loader-container">
+    <div class="loader"></div>
+</div>
   <div id="container">
     <ion-row>
       <ion-col>

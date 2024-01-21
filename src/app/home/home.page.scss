@@ -42,12 +42,9 @@
   margin-right: auto;
 }
 
-
-
 .container .sidebar .user-details {
   color: #ffffff;
 }
-
 
 .chat {
   display: flex;
@@ -70,7 +67,6 @@
   margin-bottom: 20px;
   overflow-y: auto;
 }
-
 
 .loader-container {
   position: fixed;
@@ -97,4 +93,60 @@
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+@media only screen and (max-width: 767px) {  
+  .container {
+    display: grid;
+  }
+  .container .sidebar {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 70px;
+    width: 100%;
+    overflow-y: none;
+  }
+  
+  .container .sidebar .user-image{
+    width: 30px;
+    height: 30px;
+
+  }
+
+  .container .sidebar .user-details h2{
+    font-size: 16px;
+    color: #ffffff;
+  }
+
+  .container .sidebar .logoutButton {
+    width: 50px;
+    height: 30px;
+    border-radius: 2px;
+    position: fixed;
+    right:0;
+    top:0;
+    margin-top: 17.5px;
+    margin-right: 2.5%;
+  }
+  .chat {
+    margin-top: 70px;
+    margin-bottom: 100px;
+    height: 450px;
+    display: flex;
+    margin-left: 0px;
+    width: 100%; 
+    background-color: #358b70;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+  }
+  
+  .bottom-input {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+  }
+  
 }

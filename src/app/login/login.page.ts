@@ -1,7 +1,6 @@
 import { Component ,OnInit} from '@angular/core';
 import { UserService } from '../services/user.service';
 import { Router } from '@angular/router';
-import { LoadingService } from '../services/loading.service';
 
 @Component({
   selector: 'app-login',
@@ -21,7 +20,7 @@ export class LoginPage implements OnInit{
   }
 
   
-  constructor(private userService: UserService, private router: Router,private loadingService : LoadingService) {
+  constructor(private userService: UserService, private router: Router) {
     this.error = "";
     this.password_error = "";
     this.email_error = "";
@@ -29,19 +28,7 @@ export class LoginPage implements OnInit{
     this.password = '';
   }
 
-  async presentLoading() {
-    await this.loadingService.presentLoading();
-  }
 
-  async dismissLoading() {
-    await this.loadingService.dismissLoading();
-  }
-
-  async showLoading() {
-    await this.presentLoading();
-  }
-
-  
   onLoginClick() {
     this.error = "";
     this.password_error = "";

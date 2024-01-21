@@ -7,7 +7,11 @@ import { ChangeDetectorRef } from '@angular/core';
     <ion-toolbar>
       <ion-buttons slot="start">
         <ion-button [class]="isRecording ? 'recording-btn' : 'start-btn'" (click)="toggleRecording()">
-          {{ isRecording ? 'Stop Recording' : 'Start Recording' }}
+        {{
+          isRecording
+            ? (isMobile ? 'Stop' : 'Stop Recording')
+            : (isMobile ? 'Record' : 'Start Recording')
+        }}
         </ion-button>
       </ion-buttons>
       
@@ -49,6 +53,25 @@ import { ChangeDetectorRef } from '@angular/core';
         align-items: center;
         width:100%;
       }
+      @media only screen and (max-width: 767px) { 
+        ion-button {
+          font-size: 14px; /* Adjust font size */
+          padding: 1px 2px; /* Adjust padding */
+        }
+        .audio-container {
+          width:70%;
+          display:flex;
+          margin-left:auto;
+          margin-right:auto;
+          padding: 1px;
+          background-color: #f0f0f0;
+          border-radius: 5px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .audio-container audio {
+          width: 100%; 
+        }
+      }
     `,
   ],
 })
@@ -65,6 +88,7 @@ export class AudioInputBarComponent {
   chunks: Blob[] = [];
   audioSrc: string = '';
   recordedBlob : any = '';
+  isMobile = window.innerWidth <= 767;
 
   async toggleRecording() {
     if (this.isRecording) {

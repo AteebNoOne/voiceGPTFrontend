@@ -6,8 +6,6 @@ import { LoginPage } from './login.page';
 
 import { LoginPageRoutingModule } from './login-routing.module';
 import { HttpClientModule } from '@angular/common/http'; 
-import { LoadingService } from '../services/loading.service';
-import { LoadingBarComponent } from '../components/loading-bar.component';
 
 
 @NgModule({
@@ -18,7 +16,6 @@ import { LoadingBarComponent } from '../components/loading-bar.component';
     LoginPageRoutingModule,
     HttpClientModule
   ],
-  declarations: [LoginPage,LoadingBarComponent],
-  providers: [LoadingService],
+  declarations: [LoginPage],
 })
 export class LoginPageModule {}

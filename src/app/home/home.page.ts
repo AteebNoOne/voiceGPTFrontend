@@ -4,7 +4,6 @@ import { Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs';
 import { ChangeDetectorRef } from '@angular/core';
 import { UserMessageService } from '../components/user-message.service';
-import { LoadingService } from '../services/loading.service';
 
 @Component({
   selector: 'app-home',
@@ -30,23 +29,11 @@ export class HomePage implements OnInit {
     private userService: UserService,
     private router: Router,
     private cdr: ChangeDetectorRef,
-    private userMessageService: UserMessageService,
-    private loadingService : LoadingService
+    private userMessageService: UserMessageService
   ) {
     this.username = '';
   }
 
-  async presentLoading() {
-    await this.loadingService.presentLoading();
-  }
-
-  async dismissLoading() {
-    await this.loadingService.dismissLoading();
-  }
-
-  async showLoading() {
-    await this.presentLoading();
-  }
 
   ngOnInit() {
     this.router.events

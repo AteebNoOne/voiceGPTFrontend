@@ -17,6 +17,7 @@ export class RegisterPage implements OnInit{
   email_error: string;
   password_error: string;
   reTypePassword_error: string;
+  loading:boolean = false;
 
 
   ngOnInit(): void {
@@ -74,6 +75,7 @@ export class RegisterPage implements OnInit{
   }
 
   registerUser() {
+    this.loading = true;
     this.userService
       .register(this.username,this.email, this.password)
       .subscribe({
@@ -81,10 +83,13 @@ export class RegisterPage implements OnInit{
           this.username = "";
           this.email = "";
           this.password = "";
+          alert('Successfully registered, Login now to use!')
           this.router.navigate(['/login']);
+          this.loading = false;
         },
         error: (error) => {
           this.error = error.error.message;
+          this.loading = false;
         },
       });
   }

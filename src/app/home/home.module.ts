@@ -7,8 +7,6 @@ import { AudioInputBarComponent } from '../components/audio-input-bar.component'
 import { MessagesComponent } from '../components/messages.component';
 import { AlertComponent } from '../components/alert.component';
 import { HomePageRoutingModule } from './home-routing.module';
-import { LoadingBarComponent } from '../components/loading-bar.component';
-import { LoadingService } from '../services/loading.service';
 
 @NgModule({
   
@@ -18,7 +16,6 @@ import { LoadingService } from '../services/loading.service';
     IonicModule,
     HomePageRoutingModule
   ],
-  declarations: [HomePage,AudioInputBarComponent,MessagesComponent,AlertComponent,LoadingBarComponent],
-  providers: [LoadingService],
+  declarations: [HomePage,AudioInputBarComponent,MessagesComponent,AlertComponent],
 })
 export class HomePageModule {}
