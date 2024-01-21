@@ -1,0 +1,23 @@
+<ion-content *ngIf="showContent"  [fullscreen]="true">
+  <div *ngIf="loading" class="loader-container">
+    <div class="loader"></div>
+</div>
+  <div class="container">
+    <div class="sidebar">
+      <div class="user-info">
+        <div class="user-image"></div>
+        <div class="user-details">
+          <h2>Welcome {{ username }}</h2>
+        </div>
+      </div>
+      <button class="logoutButton" (click)="logoutFunction()">Logout</button>
+    </div>
+    <div class="chat">
+      <app-alert  [type]="alertType" [message]="alertMessage"></app-alert>
+      <div  class="messages">
+        <app-messages  [username]="username"></app-messages>
+      </div>
+      <app-audio-input-bar class="bottom-input" (audioRecorded)="onAudioRecorded($event)"></app-audio-input-bar>
+    </div>
+  </div>
+</ion-content>

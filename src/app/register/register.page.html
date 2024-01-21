@@ -1,0 +1,68 @@
+<ion-content id="my-body" [fullscreen]="true">
+
+  <div id="container">
+    <ion-row>
+      <ion-col>
+        <img src="../../assets/icon/logo.png" />
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <h2 *ngIf="error" color="danger">{{error}}</h2>
+      </ion-col>
+    </ion-row>
+
+    <ion-list>
+      <ion-item>
+        <ion-input
+          label="Username"
+          placeholder="Select a unique Username"
+          type="text"
+          [(ngModel)]="username"
+        ></ion-input>
+        <ion-text *ngIf="username_error" color="danger">
+          {{username_error}}
+        </ion-text>
+      </ion-item>
+
+      <ion-item>
+        <ion-input
+          label="Email"
+          placeholder="Enter email"
+          type="email"
+          [(ngModel)]="email"
+        ></ion-input>
+        <ion-text *ngIf="email_error" color="danger">
+          {{email_error}}
+        </ion-text>
+      </ion-item>
+
+      <ion-item>
+        <ion-input
+          label="Password"
+          placeholder="Enter password"
+          type="password"
+          [(ngModel)]="password"
+        ></ion-input>
+        <ion-text *ngIf="password_error" color="danger">
+          {{password_error}}
+        </ion-text>
+      </ion-item>
+
+      <ion-item>
+        <ion-input
+          label="Confirm Password"
+          placeholder="Retype password"
+          type="password"
+          [(ngModel)]="reTypePassword"
+        ></ion-input>
+        <ion-text *ngIf="reTypePassword_error" color="danger">
+          {{reTypePassword_error}}
+        </ion-text>
+      </ion-item>
+    </ion-list>
+
+    <ion-button expand="full" color="primary" (click)="onRegisterClick()">Signup</ion-button>
+    <h4>Already have an account? <a href="/login">Login</a></h4>
+  </div>
+</ion-content>

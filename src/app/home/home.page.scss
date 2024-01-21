@@ -1,0 +1,100 @@
+.container{
+  display: flex;
+  height: 100vh;
+}
+.container .sidebar {
+  width: 300px;
+  background-color: #102921;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  overflow-y: auto;
+}
+
+.container .sidebar .user-info {
+  display: flex;
+  align-items: center;
+}
+
+.container .sidebar .user-image{
+  width: 70px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #3498db;
+  margin-right: 10px;
+  border: 1px solid black;
+  box-shadow: 0px 0px 14px 4px rgba(253, 251, 251, 0.164);
+}
+
+.container .sidebar .logoutButton {
+  width: 200px;
+  height: 50px;
+  border-radius: 10px;
+  color: white;
+  background-color: red;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+.container .sidebar .user-details {
+  color: #ffffff;
+}
+
+
+.chat {
+  display: flex;
+  flex-direction: column;
+  margin-left: 300px;
+  width: calc(100% - 300px); /* Adjusted width to account for the left margin */
+  background-color: #358b70;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.bottom-input {
+  position: flex-end;
+}
+
+.messages {
+  height: 80%;
+  width: 100%;
+  margin-bottom: 20px;
+  overflow-y: auto;
+}
+
+
+.loader-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #11020242; /* Light gray background color */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.loader {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 8px solid #3498db;
+  border-top: 8px solid transparent;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

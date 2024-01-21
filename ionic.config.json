@@ -1,0 +1,7 @@
+{
+  "name": "voicegpt",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
